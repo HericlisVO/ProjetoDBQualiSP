@@ -163,5 +163,27 @@ create table artistas (
             primary key (cod_art),
             unique(nome_art)
 );
+
+
+insert artistas values 
+					(null, 'marisa monte'),
+					(null, 'Baby do Brasil'),
+					(null, 'Morais moreira'),
+					(null, 'Pepeu Gomes'),
+					(null, 'Paulinho Boca de Cantor'),
+					(null, 'Luiz Galvão'),
+					(null, 'Alceu Valença'),
+					(null, 'Geral Azevedo'),
+					(null, 'Elba Ramalho'),
+					(null, 'Carlinhos Brown'),
+					(null, 'Arnaldo Antunes'),
+					(null, 'Adriana Calcanhoto'),
+					(null, 'Aline Barros'),
+					(null, 'Gal Costa'),
+					(null, 'Chico Buarque'),
+					(null, 'Rita Lee'),
+					(null, 'Skank'),
+					(null, 'Lulu Santos'),
+					(null, 'Anitta');
                 
                 
