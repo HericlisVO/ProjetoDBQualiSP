@@ -204,5 +204,14 @@ insert gravadoras values
 					(null, 'sony music'),
 					(null, 'Universal'),
 					(null, 'Emi');
+
+-- tabela categorias
+create table categorias (
+		cod_cat int not null auto_increment,
+        nome_cat varchar(50) not null,
+        
+        constraint pk_cat primary key (cod_cat),
+        constraint uq_cat unique(nome_cat)
+);
                 
                 
