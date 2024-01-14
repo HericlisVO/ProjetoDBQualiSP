@@ -344,3 +344,21 @@ insert titulos_pedidos values
 						(8,1,4,150.00),
 						(9,2,3,200.00),
 						(10,7,2,250.00);
+
+
+-- seleção de dados poopulados
+
+select * from funcionarios;
+select * from dependentes;
+select * from estados;
+select * from cidades;
+select * from clientes;
+select * from conjuges;
+select * from artistas;
+select * from gravadoras;
+select * from categorias;
+select * from titulos;
+select * from titulos_artistas;
+select * from pedidos;
+select * from titulos_pedidos;
+
