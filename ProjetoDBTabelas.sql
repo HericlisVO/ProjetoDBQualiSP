@@ -45,3 +45,14 @@ insert into funcionarios
         constraint ch_dep check(sexo_dep in('f','m'))
  
  );
+ 
+  -- dados tabela dependentes
+  
+  insert dependentes values
+					(null,1,'ana pereira','f'),
+					(null,1,'roberto pereira','m'),
+					(null,1,'celso pereira','m'),
+					(null,3,'brisa linhares','f'),
+					(null,3,'mari sol linhares','f'),
+					(null,4,'sonia da silva','f');
+                   
