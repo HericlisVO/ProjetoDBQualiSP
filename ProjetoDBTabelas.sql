@@ -262,5 +262,29 @@ create table titulos_artistas(
         constraint fk2_titart foreign key (cod_art) references artistas(cod_art)
 
 );
+
+
+-- dados da tabela titulos artistas
+
+insert titulos_artistas values 
+							(1,1),
+							(1,10),
+							(1,11),
+							(2,2),
+							(2,3),
+							(2,4),
+							(2,5),
+							(2,6),
+							(3,7),
+							(3,8),
+							(3,9),
+							(4,14),
+							(5,15),
+							(6,12),
+							(7,13),
+							(8,16),
+							(9,14),
+							(10,1);
+
                 
                 
