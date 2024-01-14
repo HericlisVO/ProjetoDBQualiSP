@@ -56,3 +56,14 @@ insert into funcionarios
 					(null,3,'mari sol linhares','f'),
 					(null,4,'sonia da silva','f');
                    
+-- tabela estado
+
+create table estados 
+(
+		sigla_est char(2) not null,
+        nome_est char(50) not null,
+        
+        constraint pk_est primary key(sigla_est),
+        constraint uq_est unique(nome_est)
+
+);
