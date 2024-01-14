@@ -221,5 +221,21 @@ insert categorias values
 					(null, 'trilha sonora'),
 					(null, 'Gospel'),
 					(null, 'rock nacional');
+                    
+-- tabela titulos
+create  table titulos(
+		cod_tit int auto_increment primary key,
+        cod_cat int not null,
+        cod_grav int not null,
+        nome_cd varchar(100) unique not null,
+        val_compra decimal(10.2) not null,
+        val_cd decimal(10.2)not null,
+        qtd_estq int not null,
+        constraint fk_tit_1 foreign key(cod_cat) references categorias(cod_cat),
+        constraint fk_tit_2 foreign key(cod_grav) references gravadoras(cod_grav),
+        constraint ch_tit_1 check(val_cd >=0),
+        constraint ch_tit_2 check(qtd_estq >=0)
+
+);
                 
                 
