@@ -115,3 +115,18 @@ create table clientes
 		
 );
 
+
+-- dados tabela
+
+insert clientes values
+					(null,1,'josé nogueira','rua a',1500.00,'m'),
+					(null,1,'angelo pereira','rua b',2000.00,'m'),
+					(null,1,'além mar paranhos','rua c',1500.00,'f'),
+					(null,1,'catarina souza','rua d',892.00,'f'),
+					(null,1,'vagner costa','rua e',950.00,'m'),
+					(null,2,'antenor da costa','rua f',1582.00,'m'),
+					(null,2,'maria amélia de souza','rua g',1152.02,'f'),
+					(null,2,'paulo roberto da silva','rua h',3250.00,'m'),
+					(null,3,'fatima de souza','rua i',1632.00,'f'),
+					(null,3,'joel da rocha','rua j',2000,'m');
+                    
