@@ -314,4 +314,17 @@ insert pedidos values
 					(null,7,1,'2013/03/02');
           
                 
-                
+			-- criando a tabela titulos pedidos
+create table titulos_pedidos (
+		num_ped int not null,
+        cod_tit int not null,
+        qtd_cd int not null,
+        val_cd decimal(10,2) not null,
+        
+        constraint pk_titped primary key(num_ped,cod_tit),
+        constraint fk_titped_4 foreign key(cod_tit) references titulos(cod_tit),
+        constraint fk_titped_3 foreign key(num_ped) references pedidos(num_ped),
+        constraint ch_titped_2 check(qtd_cd >=1),
+        constraint ch_titped_3 check(val_cd >=0)
+
+);
