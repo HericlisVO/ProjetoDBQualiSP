@@ -154,5 +154,14 @@ insert conjuges values
 				(6,'altiva da costa',3000.00,'f'),
 				(7,'carlos de souza',3250.00,'m')
 ;
+
+-- tabela artistas
+create table artistas (
+			cod_art int not null auto_increment,
+            nome_art varchar(100) not null,
+            -- reduzida a nivel de tabela
+            primary key (cod_art),
+            unique(nome_art)
+);
                 
                 
