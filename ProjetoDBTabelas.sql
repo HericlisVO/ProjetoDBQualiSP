@@ -152,6 +152,7 @@ insert conjuges values
 				(1,'carla nogueira',2500.00,'f'),
 				(2,'emilia pereira',5500.00,'f'),
 				(6,'altiva da costa',3000.00,'f'),
-				(7,'carlos de souza',3250.00,'m');
+				(7,'carlos de souza',3250.00,'m')
+;
                 
                 
