@@ -195,6 +195,14 @@ create table gravadoras (
 
 );
 
+-- dados gravadora
 
+insert gravadoras values 
+					(null, 'Phonomotor'),
+					(null, 'Biscoito Fino'),
+					(null, 'som livre'),
+					(null, 'sony music'),
+					(null, 'Universal'),
+					(null, 'Emi');
                 
                 
