@@ -17,3 +17,16 @@ create table funcionarios
 		constraint ch_func_1 check (sal_func >=0),
 		constraint ch_func_2 check (sexo_func in ('f','m'))
 );
+
+
+desc funcionarios;
+
+-- dados tabela funcionarios 
+insert into funcionarios 
+						values 
+                        (null, 'vania gabriela pereira','rua a',2500.00,'f'),
+                        (null, 'noberto pereira da silva','rua b',2300.00,'m'),
+                        (null, 'olavo linhares','rua c',2580.00,'m'),
+                        (null, 'paula da silva','rua d',3000.00,'f'),
+                        (null, 'rolando rocha','rua e',2000.00,'m'); 
+ 
