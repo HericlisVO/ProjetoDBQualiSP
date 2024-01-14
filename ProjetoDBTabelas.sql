@@ -185,5 +185,14 @@ insert artistas values
 					(null, 'Skank'),
 					(null, 'Lulu Santos'),
 					(null, 'Anitta');
+
+
+  -- tabela gravadora              
+create table gravadoras (
+		-- nivel coluna
+		cod_grav int not null auto_increment primary key,
+        nome_grav varchar(100) unique not null    
+
+);
                 
                 
