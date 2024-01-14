@@ -251,6 +251,16 @@ insert  titulos values
 					(null,1, 2, 'Reza',30.00, 130.00, 300),
 					(null,1, 5, 'Recanto',30.00, 90.00, 500),
 					(null,1, 6, 'Oque Você Quer Saber de Verdade',30.00, 180.00, 500);
-       
+
+-- tabela titulo artistas
+create table titulos_artistas(
+		cod_tit int not null,
+        cod_art int not null,
+        
+        constraint pk_titart primary key(cod_tit, cod_art),
+        constraint fk1_titart foreign key (cod_tit) references titulos(cod_tit),
+        constraint fk2_titart foreign key (cod_art) references artistas(cod_art)
+
+);
                 
                 
