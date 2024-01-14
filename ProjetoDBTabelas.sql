@@ -286,5 +286,17 @@ insert titulos_artistas values
 							(9,14),
 							(10,1);
 
+-- tabela pedido
+
+create table pedidos(
+
+		num_ped int not null primary key auto_increment,
+		cod_cli int not null,
+        cod_func int not null,
+        data_ped datetime not null,
+        constraint fk_ped_1 foreign key(cod_cli) references clientes(cod_cli),
+        constraint fk_ped_2 foreign key(cod_func) references funcionarios(cod_func)
+
+);
                 
                 
