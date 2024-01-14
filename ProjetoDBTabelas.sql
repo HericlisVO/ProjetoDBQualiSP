@@ -298,5 +298,20 @@ create table pedidos(
         constraint fk_ped_2 foreign key(cod_func) references funcionarios(cod_func)
 
 );
+
+-- dados tabela pedido
+
+insert pedidos values 
+					(null,1,2,'2012/05/02'),
+					(null,3,4,'2012/05/02'),
+					(null,4,5,'2012/06/02'),
+					(null,1,4,'2013/03/02'),
+					(null,7,5,'2013/03/02'),
+					(null,4,4,'2013/03/02'),
+					(null,5,5,'2013/03/02'),
+					(null,8,2,'2013/03/02'),
+					(null,2,2,'2013/03/02'),
+					(null,7,1,'2013/03/02');
+          
                 
                 
