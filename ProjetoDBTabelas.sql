@@ -30,3 +30,18 @@ insert into funcionarios
                         (null, 'paula da silva','rua d',3000.00,'f'),
                         (null, 'rolando rocha','rua e',2000.00,'m'); 
  
+ -- Tabela Dependentes
+ 
+ create table dependentes (
+		cod_dep int not null auto_increment,
+        cod_func int not null,
+        nome_dep varchar(100) not null,
+        sexo_dep char(1) not null default'm',
+        -- restrição completa de nivel de tabela
+        constraint pk_dep primary key (cod_dep),
+        
+        constraint fk_dep foreign key (cod_func) references funcionarios( cod_func),
+        
+        constraint ch_dep check(sexo_dep in('f','m'))
+ 
+ );
