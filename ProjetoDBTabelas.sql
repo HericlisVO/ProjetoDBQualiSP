@@ -96,3 +96,22 @@ insert cidades values
 					(null, 'sp','araraquara'),
 					(null, 'mg','ouro preto'),
 					(null, 'rj','cachoeiro do itapemirim');
+                    
+-- tabela cliente
+
+create table clientes
+(
+		cod_cli int not null auto_increment,
+        cod_cid int not null,
+        nome_cli varchar(100) not null,
+        end_cli varchar(100) not null,
+        renda_cli decimal(10.2) not null default 0,
+        sexo_cli char(1) not  null default 'f',
+        
+        constraint pk_cli primary key(cod_cli),
+        constraint fk_cli foreign key(cod_cid) references cidades(cod_cid),
+        constraint ch_cli_1 check (renda_cli>=0),
+        constraint ch_cli_2 check(sexo_cli in ('f','m'))
+		
+);
+
