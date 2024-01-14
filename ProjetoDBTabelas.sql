@@ -213,5 +213,13 @@ create table categorias (
         constraint pk_cat primary key (cod_cat),
         constraint uq_cat unique(nome_cat)
 );
+
+-- dados tabela categorias
+
+insert categorias values
+					(null, 'mpb'),
+					(null, 'trilha sonora'),
+					(null, 'Gospel'),
+					(null, 'rock nacional');
                 
                 
