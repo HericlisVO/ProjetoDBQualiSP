@@ -67,3 +67,10 @@ create table estados
         constraint uq_est unique(nome_est)
 
 );
+
+-- dados tabela estados
+insert estados values
+					('sp','são paulo'),
+                    ('mg','minas gerais'),
+					('rj','rio de janeiro');
+	
