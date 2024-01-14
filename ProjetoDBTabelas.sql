@@ -85,3 +85,14 @@ create table cidades
         constraint pk_cid primary key (cod_cid),
         constraint fk_cid foreign key (sigla_est) references estados(sigla_est)
 );
+
+-- dados tabela cidades
+
+insert cidades values 
+					(null, 'sp','são paulo'),
+					(null, 'sp','sorocaba'),
+					(null, 'sp','jundiaí'),
+					(null, 'sp','americana'),
+					(null, 'sp','araraquara'),
+					(null, 'mg','ouro preto'),
+					(null, 'rj','cachoeiro do itapemirim');
