@@ -129,4 +129,19 @@ insert clientes values
 					(null,2,'paulo roberto da silva','rua h',3250.00,'m'),
 					(null,3,'fatima de souza','rua i',1632.00,'f'),
 					(null,3,'joel da rocha','rua j',2000,'m');
-                    
+
+-- tabela conjuges
+
+create table conjuges 
+(
+		cod_cli int not null,
+        nome_conj varchar(100) not null,
+        renda_conj decimal(10.2) not null default 0,
+        sexo_conj char(1) not null default 'm',
+        
+        constraint pk_conj primary key (cod_cli),
+        constraint fk_conj foreign key (cod_cli) references clientes (cod_cli),
+        constraint ch_conj_1 check (renda_conj >=0),
+        constraint ch_conj_2 check (sexo_conj in ('f','m'))
+        
+);
