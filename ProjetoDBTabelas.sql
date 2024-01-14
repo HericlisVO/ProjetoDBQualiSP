@@ -237,5 +237,20 @@ create  table titulos(
         constraint ch_tit_2 check(qtd_estq >=0)
 
 );
+
+-- dados tabela titulos
+
+insert  titulos values
+					(null,1, 1, 'tribalistas',30.00, 150.00, 1500),
+					(null,1, 3, 'Acabou Chorare Novos Baianos se Encontram',50.00, 200.00, 500),
+					(null,1, 4, 'O GRANDE ENCONTRO',60.00, 120.00, 1000),
+					(null,1, 2, 'Estratoferica',50.00, 70.00, 2000),
+					(null,1, 2, 'A Caravana',55.00, 98.00, 500),
+					(null,1, 4, 'Loucura',30.00, 300.00, 200),
+					(null,1, 4, 'Graça extraordinaria',20.00, 250.00, 100),
+					(null,1, 2, 'Reza',30.00, 130.00, 300),
+					(null,1, 5, 'Recanto',30.00, 90.00, 500),
+					(null,1, 6, 'Oque Você Quer Saber de Verdade',30.00, 180.00, 500);
+       
                 
                 
