@@ -74,3 +74,14 @@ insert estados values
                     ('mg','minas gerais'),
 					('rj','rio de janeiro');
 	
+-- tabela cidade                   
+create table cidades 
+(
+
+		cod_cid int not null auto_increment,
+		sigla_est char(2) not null,
+        nome_cid varchar(100) not null,
+        
+        constraint pk_cid primary key (cod_cid),
+        constraint fk_cid foreign key (sigla_est) references estados(sigla_est)
+);
