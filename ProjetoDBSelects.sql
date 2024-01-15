@@ -63,6 +63,7 @@ round( val_cd * 1.4,2) as 'Projeção de 40% no valor de Venda:' ,
 round( val_compra * 1.5,2) as 'Projeção de 50% de Lucro:' 
 from titulos where val_cd > val_compra * 1.5 ;
 
+-- lucro maior que 50%
 select * from titulos where  val_cd >val_compra * 1.5;
 -- 10)lucro menor que 100%
 select * from titulos where  val_cd < val_compra * 2;
