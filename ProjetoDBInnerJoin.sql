@@ -54,3 +54,66 @@ select
         
         
 -- 17) Quanto cada funcionário recebeu de comissão em cada venda? A comissão é de 50% do Lucro.
+select nome_func as 'Funcionário',
+		p.num_ped as 'Pedido',
+        nome_cd as 'Titulos',
+		qtd_cd as 'Numero de cds',
+       round( (qtd_cd * (tp.val_cd -  val_compra))/2, 2) as 'Comissão do Vendedor'
+		from funcionarios f 
+        join pedidos p on f.cod_func = p.cod_func
+        join titulos_pedidos tp on p.num_ped = tp.num_ped
+        join titulos t on tp.cod_tit = t.cod_tit;
+
+
+
+select nome_func as 'Funcionário',
+		p.num_ped as 'Pedido',
+        group_concat(nome_cd) as 'Titulos',
+       sum(round( (qtd_cd * (tp.val_cd -  val_compra))/2, 2)) as 'Comissão do Vendedor'
+		from funcionarios f 
+        join pedidos p on f.cod_func = p.cod_func
+        join titulos_pedidos tp on p.num_ped = tp.num_ped
+        join titulos t on tp.cod_tit = t.cod_tit
+        group by p.num_ped 
+        ;
+
+-- 18) Quanto cada funcionario recebeu ao total?
+select nome_func as 'Funcionário',
+		group_concat( distinct p.num_ped) as 'Pedidos',
+       sum(round( (qtd_cd * (tp.val_cd -  val_compra))/2, 2)) as 'Comissão do Vendedor'
+		from funcionarios f 
+        join pedidos p on f.cod_func = p.cod_func
+        join titulos_pedidos tp on p.num_ped = tp.num_ped
+        join titulos t on tp.cod_tit = t.cod_tit
+        group by nome_func  
+        ;
+
+select nome_func as 'Funcionário',
+		group_concat( distinct p.num_ped) as 'Pedidos',
+       sum(round( (qtd_cd * (tp.val_cd -  val_compra))/2, 2)) as 'Comissão do Vendedor'
+		from funcionarios f 
+        join pedidos p on f.cod_func = p.cod_func
+        join titulos_pedidos tp on p.num_ped = tp.num_ped
+        join titulos t on tp.cod_tit = t.cod_tit
+        group by nome_func  
+        with rollup
+        ;
+        
+-- 18A) totalização de comições
+select case
+		when nome_func is not null then nome_func
+        else 'Total de Comissões'
+        end as 'Funcionario',
+        case 
+		  when nome_func is not null then group_concat( distinct p.num_ped) 
+        else ''
+        end as 'Pedidos',
+       sum(round( (qtd_cd * (tp.val_cd -  val_compra))/2, 2)) as 'Comissão do Vendedor'
+		from funcionarios f 
+        join pedidos p on f.cod_func = p.cod_func
+        join titulos_pedidos tp on p.num_ped = tp.num_ped
+        join titulos t on tp.cod_tit = t.cod_tit
+        group by nome_func
+        with rollup
+        
+        ;
