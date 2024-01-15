@@ -29,8 +29,20 @@ select * from titulos where val_cd > 100 and val_cd <150;
 select * from titulos where val_compra <100;
 select * from titulos where val_compra between 0 and 100;
 -- 6) nome começado por consoante
+
+-- não usar a consulta afirmativa
+select * from titulos where nome_cd like 'b' or nome_cd like 'c%' or nome_cd like 'd';
+-- usar a negação
+select * from titulos where
+							nome_cd not like 'a%' and
+							nome_cd not like 'e%' and
+							nome_cd not like 'i%'and
+							nome_cd not like 'o%'and
+							nome_cd not like 'u%';
 -- 7) nome que contenha o texo 'saber'
+select * from titulos where nome_cd like '%saber%';
 -- 8) nome iniciado com 'acabou'
+select * from titulos where nome_cd like 'Acabou%';
 -- 9) lucro maior que 50%
 -- 10)lucro menor que 100%
 -- 11)lucro maior que 100.00
