@@ -58,12 +58,18 @@ select nome_cd as 'Titulo: ',
 val_compra as 'Valor de Compra: ',
 val_cd as 'Valor de Venda: ',
 round( val_cd - val_compra,2) as 'Lucro em Reais: ',
-round( (val_cd - val_compra)*100/val_cd,1) as 'Lucro em %: ',
-round( val_cd * 1.4) as 'Projeção de 40% no valor de Venda:' ,
-round( val_compra * 1.5) as 'Projeção de 50% de Lucro:' 
-from titulos;
+round( (val_cd - val_compra)*100/val_cd,2) as 'Lucro em %: ',
+round( val_cd * 1.4,2) as 'Projeção de 40% no valor de Venda:' ,
+round( val_compra * 1.5,2) as 'Projeção de 50% de Lucro:' 
+from titulos where val_cd > val_compra * 1.5 ;
+
+select * from titulos where  val_cd >val_compra * 1.5;
 -- 10)lucro menor que 100%
+select * from titulos where  val_cd < val_compra * 2;
+
 -- 11)lucro maior que 100.00
+select * from titulos where  (val_cd - val_compra)>100;
+
 
 
 
