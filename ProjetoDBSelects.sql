@@ -39,11 +39,29 @@ select * from titulos where
 							nome_cd not like 'i%'and
 							nome_cd not like 'o%'and
 							nome_cd not like 'u%';
+                            
+ -- expressão relugar regexp e sua negação
+select * from titulos where nome_cd regexp '^[bcdfghjklmnpqrstvxwzy]';
+-- ^ o inicio da expressão[^ a negação da expressão]
+select *from titulos where nome_cd regexp '^[^AEIOU]';
+select *from titulos where nome_cd not regexp '^[AEIOU]';
+-- rlike e sua negação
+select *from titulos where nome_cd rlike '^[^AEIOU]';
+select *from titulos where nome_cd not rlike '^[AEIOU]';
 -- 7) nome que contenha o texo 'saber'
 select * from titulos where nome_cd like '%saber%';
 -- 8) nome iniciado com 'acabou'
 select * from titulos where nome_cd like 'Acabou%';
 -- 9) lucro maior que 50%
+
+select nome_cd as 'Titulo: ',
+val_compra as 'Valor de Compra: ',
+val_cd as 'Valor de Venda: ',
+round( val_cd - val_compra,2) as 'Lucro em Reais: ',
+round( (val_cd - val_compra)*100/val_cd,1) as 'Lucro em %: ',
+round( val_cd * 1.4) as 'Projeção de 40% no valor de Venda:' ,
+round( val_compra * 1.5) as 'Projeção de 50% de Lucro:' 
+from titulos;
 -- 10)lucro menor que 100%
 -- 11)lucro maior que 100.00
 
