@@ -40,3 +40,17 @@ select
         join categorias ct on t.cod_cat = ct.cod_cat
         join gravadoras g on t.cod_grav = g.cod_grav
         where val_compra= (select max(val_compra) from titulos);
+        
+
+-- 16) Quantos clientes do estado de são paulo nós temos no nosso sistema ?
+
+select 	
+		count(cod_cli) as 'Número de Clientes de São Paulo'
+		from clientes cl 
+		join cidades cd on cl.cod_cid = cd.cod_cid 
+        join estados e on cd.sigla_est = e.sigla_est
+        where nome_est = 'São Paulo'
+        ;
+        
+        
+-- 17) Quanto cada funcionário recebeu de comissão em cada venda? A comissão é de 50% do Lucro.
